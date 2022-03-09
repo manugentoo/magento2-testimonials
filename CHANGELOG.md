@@ -1,4 +1,4 @@
-# "Manugentoo Testimonials Module Base" Change Log
+# "Manugentoo Testimonials Module" Change Log
 
 All notable changes to this project will be documented in this file.
 

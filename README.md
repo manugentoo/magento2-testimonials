@@ -1,8 +1,8 @@
 “Manugentoo Testimonial Magento 2 Module” 
 =====================
-Magento 2 Manugentoo Base Module
+Magento 2 Manugentoo Testimonial Module
 
-Extension homepage: https://github.com/manugentoo/magento2-base
+Extension homepage: https://github.com/manugentoo/magento2-tesimonials
 
 ## CONTACTS
 * Email: manugentoo@gmail.com
@@ -15,12 +15,12 @@ Extension homepage: https://github.com/manugentoo/magento2-base
 
 ### COMPOSER INSTALLATION
 * run composer command:
->`$> composer require manugentoo/base`
+>`$> composer require manugentoo/tesimonials`
 
 ### MANUAL INSTALLATION
 * extract files from an archive
 
-* deploy files into Magento2 folder `app/code/Manugentoo/Base`
+* deploy files into Magento2 folder `app/code/Manugentoo/Testimonials`
 
 ### ENABLE EXTENSION
 * enable extension (use Magento 2 command line interface \*):
