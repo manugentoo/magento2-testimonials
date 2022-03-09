@@ -9,7 +9,7 @@
                         <block class="Magento\Framework\View\Element\Template" name="cms.left.links" template="Magento_Theme::sidebar/cms-left-links.phtml" />
                     </container>
                     <container name="cms.content.right" htmlTag="div" htmlClass="cell small-12 medium-12 large-9 cms">
-                        <block class="Infiniti\Testimonials\Block\Index" name="testimonials_index_index" template="Infiniti_Testimonials::index.phtml" />
+                        <block class="Manugentoo\Testimonials\Block\Index" name="testimonials_index_index" template="Manugentoo_Testimonials::index.phtml" />
                     </container>
                 </container>
             </container>

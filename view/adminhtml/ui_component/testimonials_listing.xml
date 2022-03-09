@@ -3,8 +3,8 @@
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">testimonials_listing.infiniti_testimonials_listing_data_source</item>
-            <item name="deps" xsi:type="string">testimonials_listing.infiniti_testimonials_listing_data_source</item>
+            <item name="provider" xsi:type="string">testimonials_listing.manugentoo_testimonials_listing_data_source</item>
+            <item name="deps" xsi:type="string">testimonials_listing.manugentoo_testimonials_listing_data_source</item>
         </item>
         <item name="spinner" xsi:type="string">testimonials_columns</item>
         <item name="buttons" xsi:type="array">
@@ -16,10 +16,10 @@
             </item>
         </item>
     </argument>
-    <dataSource name="infiniti_testimonials_listing_data_source">
+    <dataSource name="manugentoo_testimonials_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">TestimonialsGridDataProvider</argument>
-            <argument name="name" xsi:type="string">infiniti_testimonials_listing_data_source</argument>
+            <argument name="name" xsi:type="string">manugentoo_testimonials_listing_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">testimonial_id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
             <argument name="data" xsi:type="array">
@@ -61,7 +61,7 @@
                         <message translate="true">Are you sure you want to delete selected items?</message>
                         <title translate="true">Delete items</title>
                     </confirm>
-                    <url path="infiniti_testimonials/manage/massDelete"/>
+                    <url path="manugentoo_testimonials/manage/massDelete"/>
                     <type>delete</type>
                     <label translate="true">Delete</label>
                 </settings>
@@ -73,7 +73,7 @@
         <settings>
             <editorConfig>
                 <param name="clientConfig" xsi:type="array">
-                    <item name="saveUrl" xsi:type="url" path="infiniti/testimonials/inlineEdit"/>
+                    <item name="saveUrl" xsi:type="url" path="manugentoo/testimonials/inlineEdit"/>
                     <item name="validateBeforeSave" xsi:type="boolean">false</item>
                 </param>
                 <param name="indexField" xsi:type="string">testimonial_id</param>
@@ -133,7 +133,7 @@
             </settings>
         </column>
 
-        <actionsColumn name="actions" sortOrder="999" class="Infiniti\Testimonials\Ui\Component\Listing\Column\TestimonialsActions">
+        <actionsColumn name="actions" sortOrder="999" class="Manugentoo\Testimonials\Ui\Component\Listing\Column\TestimonialsActions">
             <settings>
                 <indexField>testimonial_id</indexField>
                 <resizeEnabled>false</resizeEnabled>

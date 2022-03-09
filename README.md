@@ -24,7 +24,7 @@ Extension homepage: https://github.com/manugentoo/magento2-base
 
 ### ENABLE EXTENSION
 * enable extension (use Magento 2 command line interface \*):
->`$> php bin/magento module:enable Manugentoo_Base`
+>`$> php bin/magento module:enable Manugentoo_Testimonials
 
 * to make sure that the enabled module is properly registered, run 'setup:upgrade':
 >`$> php bin/magento setup:upgrade`

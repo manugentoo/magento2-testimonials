@@ -1,9 +1,10 @@
 <?php
+
 namespace Manugentoo\Testimonials\Block\Adminhtml\Testimonials\Edit;
 
 use Magento\Backend\Block\Widget\Context;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Infiniti\Testimonials\Api\TestimonialsRepositoryInterface;
+use Manugentoo\Testimonials\Api\TestimonialsRepositoryInterface;
 
 /**
  * Class GenericButton
@@ -12,50 +13,49 @@ use Infiniti\Testimonials\Api\TestimonialsRepositoryInterface;
  */
 class GenericButton
 {
-    /**
-     * @var Context
-     */
-    protected $context;
-    /**
-     * @var TestimonialsRepositoryInterface
-     */
-    protected $testimonialsRepository;
+	/**
+	 * @var Context
+	 */
+	protected $context;
+	/**
+	 * @var TestimonialsRepositoryInterface
+	 */
+	protected $testimonialsRepository;
 
-    /**
-     * GenericButton constructor.
-     * @param Context $context
-     * @param TestimonialsRepositoryInterface $testimonialsRepository
-     */
-    public function __construct(
-        Context $context,
-        TestimonialsRepositoryInterface $testimonialsRepository
-    ) {
-        $this->context = $context;
-        $this->testimonialsRepository = $testimonialsRepository;
-    }
+	/**
+	 * GenericButton constructor.
+	 * @param Context $context
+	 * @param TestimonialsRepositoryInterface $testimonialsRepository
+	 */
+	public function __construct(
+		Context $context,
+		TestimonialsRepositoryInterface $testimonialsRepository
+	) {
+		$this->context = $context;
+		$this->testimonialsRepository = $testimonialsRepository;
+	}
 
-    /**
-     * @return |null
-     */
-    public function getTestimonialId()
-    {
-        try {
-            return $this->testimonialsRepository->getById(
-                $this->context->getRequest()->getParam('testimonial_id')
-            )->getId();
-        } catch (NoSuchEntityException $e) {
+	/**
+	 * @return |null
+	 */
+	public function getTestimonialId()
+	{
+		try {
+			return $this->testimonialsRepository->getById(
+				$this->context->getRequest()->getParam('testimonial_id')
+			)->getId();
+		} catch (NoSuchEntityException $e) {
+		}
+		return null;
+	}
 
-        }
-        return null;
-    }
-
-    /**
-     * @param string $route
-     * @param array $params
-     * @return string
-     */
-    public function getUrl($route = '', $params = [])
-    {
-        return $this->context->getUrlBuilder()->getUrl($route, $params);
-    }
+	/**
+	 * @param string $route
+	 * @param array $params
+	 * @return string
+	 */
+	public function getUrl($route = '', $params = [])
+	{
+		return $this->context->getUrlBuilder()->getUrl($route, $params);
+	}
 }

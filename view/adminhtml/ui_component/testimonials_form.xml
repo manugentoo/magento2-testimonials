@@ -14,11 +14,11 @@
     </argument>
     <settings>
         <buttons>
-            <button name="save_and_continue" class="Infiniti\Testimonials\Block\Adminhtml\Testimonials\Edit\SaveAndContinueButton"/>
-            <button name="save" class="Infiniti\Testimonials\Block\Adminhtml\Testimonials\Edit\SaveButton"/>
-            <button name="reset" class="Infiniti\Testimonials\Block\Adminhtml\Testimonials\Edit\ResetButton"/>
-            <button name="delete" class="Infiniti\Testimonials\Block\Adminhtml\Testimonials\Edit\DeleteButton"/>
-            <button name="back" class="Infiniti\Testimonials\Block\Adminhtml\Testimonials\Edit\BackButton"/>
+            <button name="save_and_continue" class="Manugentoo\Testimonials\Block\Adminhtml\Testimonials\Edit\SaveAndContinueButton"/>
+            <button name="save" class="Manugentoo\Testimonials\Block\Adminhtml\Testimonials\Edit\SaveButton"/>
+            <button name="reset" class="Manugentoo\Testimonials\Block\Adminhtml\Testimonials\Edit\ResetButton"/>
+            <button name="delete" class="Manugentoo\Testimonials\Block\Adminhtml\Testimonials\Edit\DeleteButton"/>
+            <button name="back" class="Manugentoo\Testimonials\Block\Adminhtml\Testimonials\Edit\BackButton"/>
         </buttons>
         <namespace>testimonials_form</namespace>
         <dataScope>data</dataScope>
@@ -33,9 +33,9 @@
             </item>
         </argument>
         <settings>
-            <submitUrl path="infiniti_testimonials/manage/save"/>
+            <submitUrl path="Manugentoo_testimonials/manage/save"/>
         </settings>
-        <dataProvider class="Infiniti\Testimonials\Model\Testimonials\DataProvider" name="testimonials_form_data_source">
+        <dataProvider class="Manugentoo\Testimonials\Model\Testimonials\DataProvider" name="testimonials_form_data_source">
             <settings>
                 <requestFieldName>testimonial_id</requestFieldName>
                 <primaryFieldName>testimonial_id</primaryFieldName>
@@ -105,9 +105,9 @@
                         <allowedExtensions>jpg jpeg gif png</allowedExtensions>
                         <maxFileSize>2097152</maxFileSize>
                         <uploaderConfig>
-                            <param xsi:type="string" name="url">infiniti_testimonials/manage/uploader</param>
+                            <param xsi:type="string" name="url">manugentoo_testimonials/manage/uploader</param>
                         </uploaderConfig>
-                        <initialMediaGalleryOpenSubpath>infiniti/testimonials/images</initialMediaGalleryOpenSubpath>
+                        <initialMediaGalleryOpenSubpath>manugentoo/testimonials/images</initialMediaGalleryOpenSubpath>
                     </settings>
                 </imageUploader>
             </formElements>

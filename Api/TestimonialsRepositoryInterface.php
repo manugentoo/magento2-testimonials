@@ -6,7 +6,7 @@ use Manugentoo\Testimonials\Api\Data\TestimonialInterface;
 
 /**
  * Interface TestimonialsRepositoryInterface
- * @package Infiniti\Testimonials\Api
+ * @package Manugentoo\Testimonials\Api
  */
 interface TestimonialsRepositoryInterface
 {

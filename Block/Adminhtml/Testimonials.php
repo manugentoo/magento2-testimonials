@@ -1,16 +1,18 @@
 <?php
 namespace Manugentoo\Testimonials\Block\Adminhtml;
 
+use Magento\Backend\Block\Widget\Grid\Container;
+
 /**
  * Class Testimonials
  * @package Manugentoo\Testimonials\Block\Adminhtml
  * @author Manu Gentoo <manugentoo@gmail.com>
  */
-class Testimonials extends \Magento\Backend\Block\Widget\Grid\Container
+class Testimonials extends Container
 {
-    /**
-     *
-     */
+	/**
+	 * @return void
+	 */
     protected function _construct()
     {
         $this->_controller = 'adminhtml_testimonials';

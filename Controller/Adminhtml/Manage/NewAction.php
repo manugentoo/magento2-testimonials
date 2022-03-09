@@ -2,48 +2,54 @@
 
 namespace Manugentoo\Testimonials\Controller\Adminhtml\Manage;
 
+use Magento\Backend\App\Action\Context;
+use Magento\Backend\Model\View\Result\Forward;
+use Magento\Backend\Model\View\Result\ForwardFactory;
+use Magento\Backend\App\Action;
+use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\Controller\ResultInterface;
+
 /**
  * Class NewAction
  * @package Manugentoo\Testimonials\Controller\Adminhtml\Manage
  * @author Manu Gentoo <manugentoo@gmail.com>
  */
-class NewAction extends \Magento\Framework\App\Action\Action
+class NewAction extends Action
 {
 
-    /**
-     * @var \Magento\Backend\Model\View\Result\ForwardFactory
-     */
-    protected $resultForwardFactory;
+	/**
+	 * @var ForwardFactory
+	 */
+	protected $resultForwardFactory;
 
-    /**
-     * NewAction constructor.
-     * @param \Magento\Backend\App\Action\Context $context
-     * @param \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory
-     */
-    public function __construct(
-        \Magento\Backend\App\Action\Context $context,
-        \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory
-    ) {
-        $this->resultForwardFactory = $resultForwardFactory;
-        parent::__construct($context);
-    }
+	/**
+	 * @param Context $context
+	 * @param ForwardFactory $resultForwardFactory
+	 */
+	public function __construct(
+		Context $context,
+		ForwardFactory $resultForwardFactory
+	) {
+		$this->resultForwardFactory = $resultForwardFactory;
+		parent::__construct($context);
+	}
 
-    /**
-     * @return mixed
-     */
-    protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed('Manugentoo_Testimonials::manage_save');
-    }
+	/**
+	 * @return Forward|ResponseInterface|ResultInterface
+	 */
+	public function execute()
+	{
+		/** @var Forward $resultForward */
+		$resultForward = $this->resultForwardFactory->create();
+		return $resultForward->forward('edit');
+	}
 
-    /**
-     * @return \Magento\Backend\Model\View\Result\Forward|\Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface
-     */
-    public function execute()
-    {
-        /** @var \Magento\Backend\Model\View\Result\Forward $resultForward */
-        $resultForward = $this->resultForwardFactory->create();
-        return $resultForward->forward('edit');
-    }
+	/**
+	 * @return mixed
+	 */
+	protected function _isAllowed()
+	{
+		return $this->_authorization->isAllowed('Manugentoo_Testimonials::manage_save');
+	}
 
 }
