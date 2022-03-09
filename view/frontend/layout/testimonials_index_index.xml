@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+        <referenceContainer name="content">
+            <container name="cms.grid.container.main" htmlTag="div" htmlClass="grid-container">
+                <container name="cms.grid-x" htmlTag="div" htmlClass="grid-x grid-margin-x">
+                    <container name="cms.content.left" htmlTag="div" htmlClass="cell small-12 medium-12 large-3">
+                        <block class="Magento\Framework\View\Element\Template" name="cms.left.links" template="Magento_Theme::sidebar/cms-left-links.phtml" />
+                    </container>
+                    <container name="cms.content.right" htmlTag="div" htmlClass="cell small-12 medium-12 large-9 cms">
+                        <block class="Infiniti\Testimonials\Block\Index" name="testimonials_index_index" template="Infiniti_Testimonials::index.phtml" />
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+
+        <!-- Move Elements -->
+        <move element="testimonials_index_index" destination="cms.content.right"/>
+
+        <!-- Remove Elements -->
+        <referenceBlock name="breadcrumbs" remove="true" />
+        <referenceContainer name="div.sidebar.additional" remove="true" />
+    </body>
+</page>

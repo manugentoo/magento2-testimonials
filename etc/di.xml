@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Manugentoo\Testimonials\Api\Data\TestimonialInterface" type="Manugentoo\Testimonials\Model\Testimonials" />
+    <preference for="Manugentoo\Testimonials\Api\TestimonialsRepositoryInterface" type="Manugentoo\Testimonials\Model\TestimonialsRepository" />
+    <virtualType name="TestimonialsGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Manugentoo\Testimonials\Model\ResourceModel\Testimonials\Collection</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="Manugentoo_testimonials_listing_data_source" xsi:type="string">Manugentoo\Testimonials\Model\ResourceModel\Testimonials\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Manugentoo\Testimonials\Model\ResourceModel\Testimonials\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">manugentoo_testimonials</argument>
+            <argument name="eventPrefix" xsi:type="string">testimonials_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">testimonials_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Manugentoo\Testimonials\Model\ResourceModel\Testimonials</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Model\Entity\RepositoryFactory">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="Manugentoo\Testimonials\Api\Data\TestimonialsInterface" xsi:type="string">Infiniti\Testimonials\Api\TestimonialsRepositoryInterface</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,17 @@
+<?php
+/** @var Manugentoo\Testimonials\Block\Index $block **/
+
+$testimonials = $block->getTestimonials();
+?>
+
+<div class="testimonials">
+    <h1>Testimonials</h1>
+    <?php foreach($testimonials as $testimonial):?>
+    <div class="testimonial">
+        <p><?php echo $testimonial->getComment()?></p>
+        <p class="client"><strong><?php echo $testimonial->getName()?></strong></p>
+        <hr/>
+    </div>
+    <?php endforeach;; ?>
+</div>
+

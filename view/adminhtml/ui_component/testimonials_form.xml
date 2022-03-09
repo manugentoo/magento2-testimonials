@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Manu Gentoo <manugentoo@gmail.com>
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">testimonials_form.testimonials_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Testimonials Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save_and_continue" class="Infiniti\Testimonials\Block\Adminhtml\Testimonials\Edit\SaveAndContinueButton"/>
+            <button name="save" class="Infiniti\Testimonials\Block\Adminhtml\Testimonials\Edit\SaveButton"/>
+            <button name="reset" class="Infiniti\Testimonials\Block\Adminhtml\Testimonials\Edit\ResetButton"/>
+            <button name="delete" class="Infiniti\Testimonials\Block\Adminhtml\Testimonials\Edit\DeleteButton"/>
+            <button name="back" class="Infiniti\Testimonials\Block\Adminhtml\Testimonials\Edit\BackButton"/>
+        </buttons>
+        <namespace>testimonials_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>testimonials_form.testimonials_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="testimonials_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="infiniti_testimonials/manage/save"/>
+        </settings>
+        <dataProvider class="Infiniti\Testimonials\Model\Testimonials\DataProvider" name="testimonials_form_data_source">
+            <settings>
+                <requestFieldName>testimonial_id</requestFieldName>
+                <primaryFieldName>testimonial_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general" sortOrder="10">
+        <settings>
+            <collapsible>false</collapsible>
+            <label translate="true">General</label>
+        </settings>
+        <field name="testimonial_id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">testimonial_id</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <dataScope>testimonial_id</dataScope>
+            </settings>
+        </field>
+        <field name="name" sortOrder="10" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">name</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Name</label>
+                <dataScope>name</dataScope>
+            </settings>
+        </field>
+        <field name="company_name" sortOrder="20" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">company_name</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Company Name</label>
+                <dataScope>company_name</dataScope>
+            </settings>
+        </field>
+        <field name="company_image" formElement="imageUploader">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">company_image</item>
+                </item>
+            </argument>
+            <settings>
+                <elementTmpl>ui/form/element/uploader/image</elementTmpl>
+                <dataType>string</dataType>
+                <label translate="true">Image</label>
+                <visible>true</visible>
+                <required>false</required>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <allowedExtensions>jpg jpeg gif png</allowedExtensions>
+                        <maxFileSize>2097152</maxFileSize>
+                        <uploaderConfig>
+                            <param xsi:type="string" name="url">infiniti_testimonials/manage/uploader</param>
+                        </uploaderConfig>
+                        <initialMediaGalleryOpenSubpath>infiniti/testimonials/images</initialMediaGalleryOpenSubpath>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+        <field name="comment" sortOrder="50" formElement="textarea">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">company_image</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Testimonial</label>
+                <dataScope>comment</dataScope>
+            </settings>
+        </field>
+    </fieldset>
+</form>
