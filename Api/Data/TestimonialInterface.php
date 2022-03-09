@@ -8,7 +8,6 @@ namespace Manugentoo\Testimonials\Api\Data;
  */
 interface TestimonialInterface {
 
-
 	const TABLE_NAME = 'manugentoo_testimonials';
 
     const TESTIMONIAL_ID = 'testimonial_id';
